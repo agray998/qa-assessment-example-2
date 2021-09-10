@@ -35,9 +35,9 @@ def one(word, chars):
 
 def two(total_seconds):
     days = total_seconds // 86400
-    hours = (total_seconds - (days * 86400)) // 3600
-    minutes = (total_seconds - (days * 86400) - (hours * 3600)) // 60
-    seconds = total_seconds - (days * 86400) - (hours * 3600) - (minutes * 60)
+    hours = (total_seconds % 86400) // 3600
+    minutes = (total_seconds % 3600) // 60
+    seconds = total_seconds % 60
     return (days, hours, minutes, seconds)
 
     # <QUESTION 3>
